@@ -3,8 +3,8 @@ const mongoose = require("mongoose");
 const advertisementSchema = new mongoose.Schema({
   photo: String,
   title: String,
-  adLink: String,
   linkDescription: String,
+  createdAt: { type: Date, default: Date.now }, // Adds timestamp when inserted
 });
 
 const eventSchema = new mongoose.Schema({
@@ -12,6 +12,7 @@ const eventSchema = new mongoose.Schema({
   title: String,
   zoomLink: String,
   description: String,
+  createdAt: { type: Date, default: Date.now }, // Adds timestamp when inserted
 });
 
 const adminSchema = new mongoose.Schema({
