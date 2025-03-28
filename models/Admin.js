@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const advertisementSchema = new mongoose.Schema({
   photo: String,
   title: String,
+  adLink: String,
   linkDescription: String,
 });
 

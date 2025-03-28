@@ -1,5 +1,11 @@
 const mongoose = require("mongoose");
 
+const advertisementSchema = new mongoose.Schema({
+  photo: String,
+  title: String,
+  linkDescription: String,
+});
+
 const eventSchema = new mongoose.Schema({
   photo: String,
   title: String,
@@ -7,5 +13,10 @@ const eventSchema = new mongoose.Schema({
   description: String,
 });
 
-const Event = mongoose.model("Event", eventSchema);
-module.exports = Event;
+const adminSchema = new mongoose.Schema({
+  advertisements: [advertisementSchema], // Array of ads
+  events: [eventSchema], // Array of events
+});
+
+const Admin = mongoose.model("Admin", adminSchema);
+module.exports = Admin;
